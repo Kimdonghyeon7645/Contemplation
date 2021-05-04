@@ -17,7 +17,8 @@ final ThemeData lightTheme = ThemeData(
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     showUnselectedLabels: false,
     showSelectedLabels: true,
-    backgroundColor: Colors.white,
+    elevation: 0,
+    backgroundColor: Color.fromRGBO(245, 245, 245, 1),
     unselectedItemColor: Colors.black.withOpacity(0.6),
     selectedItemColor: Color.fromRGBO(0x1F, 0x3C, 0x6B, 1),
     // unselectedItemColor: Colors.white.withOpacity(0.4),

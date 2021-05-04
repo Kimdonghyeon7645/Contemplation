@@ -7,33 +7,14 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.dehaze,),
-        ),
+        appBar: AppBar(leading: Icon(Icons.dehaze)),
         body: CustomScrollView(slivers: [
-          SliverToBoxAdapter(
-            child: Container(
-              height: Get.height * 0.3,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://user-images.githubusercontent.com/48408417/117020428-64bc5900-ad31-11eb-9a71-eb4b8b7e9e97.png"),
-                    colorFilter: ColorFilter.mode(
-                        Get.theme.canvasColor, BlendMode.colorBurn)),
-              ),
-              padding: EdgeInsets.fromLTRB(
-                  Get.width * 0.06, Get.height * 0.02, 0, Get.height * 0.08),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("오늘도 반갑습니다,",
-                      style: Get.theme.textTheme.headline2
-                          .copyWith(color: Colors.white)),
-                  Text("익명님!",
-                      style: Get.theme.accentTextTheme.headline2
-                          .copyWith(color: Colors.white)),
-                ],
-              ),
+          SliverAppBar(
+            expandedHeight: Get.height * 0.22,
+            flexibleSpace: FlexibleSpaceBar(
+              stretchModes: [StretchMode.zoomBackground],
+              centerTitle: true,
+              background: buildFlexibleSpaceBackground(),
             ),
           ),
           SliverToBoxAdapter(
@@ -43,7 +24,8 @@ class MainPage extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
               ),
               height: Get.height * 2,
-              padding: EdgeInsets.fromLTRB(Get.width * 0.06, Get.height * 0.02, Get.width * 0.06, Get.height * 0.03),
+              padding: EdgeInsets.fromLTRB(Get.width * 0.06, Get.height * 0.02,
+                  Get.width * 0.06, Get.height * 0.03),
               child: Column(
                 children: [
                   Row(
@@ -59,6 +41,30 @@ class MainPage extends StatelessWidget {
           ),
         ]),
         bottomNavigationBar: BottomBar(),
+      ),
+    );
+  }
+
+  Container buildFlexibleSpaceBackground() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(
+          Get.width * 0.06, Get.height * 0.02, 0, 0),
+      child: Stack(
+        children: [
+          // Align(
+          //   alignment: Alignment.bottomRight,
+          //   child: Image.network("https://user-images.githubusercontent.com/48408417/117029561-bff24980-ad39-11eb-84c1-ac8d310e6c84.png", width: Get.height * 0.16,),
+          // ),
+          Text("오늘도 반갑습니다,",
+              style:
+                  Get.theme.textTheme.headline2.copyWith(color: Colors.white)),
+          Positioned(
+            top: Get.theme.textTheme.headline2.fontSize + 0.01 * Get.height,
+            child: Text("익명님!",
+                style: Get.theme.accentTextTheme.headline2
+                    .copyWith(color: Colors.white)),
+          ),
+        ],
       ),
     );
   }
