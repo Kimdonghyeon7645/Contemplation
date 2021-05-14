@@ -3,7 +3,7 @@ import 'package:contemplation/widgets/medication_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final List<List<String>> medicationList = [
     ["하루 5분 명상", "기본 명상"],
     ["10분 몰입 명상", "기본 명상"],

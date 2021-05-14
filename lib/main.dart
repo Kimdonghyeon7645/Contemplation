@@ -1,4 +1,4 @@
-import 'package:contemplation/screens/screen_main_page.dart';
+import 'package:contemplation/screens/screen_home_page.dart';
 import 'package:contemplation/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '관조 - Contemplation',
       theme: lightTheme,
-      home: MainPage(),
+      home: HomePage(),
+      initialRoute: "/home",
+      getPages: [
+        GetPage(name: "/home", page: () => HomePage()),
+      ],
     );
   }
 }
