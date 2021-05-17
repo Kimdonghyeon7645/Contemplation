@@ -1,82 +1,48 @@
 import 'package:contemplation/widgets/bottom_bar.dart';
-import 'package:contemplation/widgets/medication_tile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomePage extends StatelessWidget {
-  final List<List<String>> medicationList = [
-    ["하루 5분 명상", "기본 명상"],
-    ["10분 몰입 명상", "기본 명상"],
-    ["지혜를 깨우는 명상", "기본 명상"],
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(leading: Icon(Icons.dehaze)),
         body: CustomScrollView(
           slivers: [
-            HomeSliverAppBar(),
-            SliverToBoxAdapter(
-              child: buildMedicationList(medicationList),
+            SliverAppBar(
+              backgroundColor: Color.fromRGBO(232, 196, 118, 1),
+              floating: true,
+              leading: Icon(Icons.menu),
+              leadingWidth: Get.width * 0.12,
+              actions: [Padding(
+                padding: EdgeInsets.fromLTRB(0, 0.002 * Get.width, 0.01 * Get.width, 0),
+                child: Icon(MdiIcons.recordCircleOutline),
+              )],
+              elevation: 0,
             ),
+            SliverToBoxAdapter(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(
+                    0.12 * Get.width, 0, 0, 0.07 * Get.width),
+                alignment: Alignment.bottomLeft,
+                height: Get.height * 0.1,
+                color: Color.fromRGBO(232, 196, 118, 1),
+                child: Text("임중도원 사이후이!",
+                    style: Get.theme.appBarTheme.textTheme.headline2),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                height: Get.height * 2,
+                color: Colors.grey.withOpacity(0.1),
+              ),
+            )
           ],
         ),
         bottomNavigationBar: BottomBar(),
       ),
     );
   }
-
-  Container buildMedicationList(List<List<String>> list) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
-      ),
-      height: Get.height * 1,
-      padding: EdgeInsets.fromLTRB(Get.width * 0.07, Get.height * 0.02,
-          Get.width * 0.07, Get.height * 0.03),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("추천 명상", style: Get.textTheme.headline6),
-              Icon(
-                Icons.more_horiz,
-                color: Get.textTheme.headline6.color,
-              ),
-            ],
-          ),
-          SizedBox(height: Get.height * 0.01),
-          for (List<String> content in list)
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                  0, Get.height * 0.01, 0, Get.height * 0.01),
-              child: MedicationTile(content[0], content[1]),
-            )
-        ],
-      ),
-    );
-  }
 }
-
-class HomeSliverAppBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SliverAppBar(
-      elevation: 0,
-      expandedHeight: Get.height * 0.1,
-      stretch: true,
-      flexibleSpace: FlexibleSpaceBar(
-        title: Text("은근히 꾸준히!", style: Get.theme.textTheme.headline1.copyWith(color: Colors.black)),
-        stretchModes: [
-          StretchMode.blurBackground
-        ],
-      ),
-      // floating: true,
-    );
-  }
-}
-
