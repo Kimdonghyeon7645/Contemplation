@@ -1,3 +1,4 @@
+import 'package:contemplation/controllers/bottom_bar_index_controller.dart';
 import 'package:contemplation/screens/breath/screen_breath_list_page.dart';
 import 'package:contemplation/screens/meditation/screen_meditation_list_page.dart';
 import 'package:contemplation/screens/screen_home_page.dart';
@@ -12,6 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Get.put(BottomBarIndexController());
     return GetMaterialApp(
       theme: lightTheme,
       debugShowCheckedModeBanner: false,

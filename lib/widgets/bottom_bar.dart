@@ -6,9 +6,9 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put(BottomBarIndexController());
     return GetBuilder<BottomBarIndexController>(
       builder: (controller) => BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,  // item 들이 항상 고정된다
         currentIndex: controller.index,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "홈"),

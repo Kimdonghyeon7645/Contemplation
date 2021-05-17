@@ -15,19 +15,14 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(leading: Icon(Icons.dehaze)),
-        body: CustomScrollView(slivers: [
-          SliverAppBar(
-            expandedHeight: Get.height * 0.22,
-            flexibleSpace: FlexibleSpaceBar(
-              stretchModes: [StretchMode.zoomBackground],
-              centerTitle: true,
-              background: buildFlexibleSpaceBackground(),
+        body: CustomScrollView(
+          slivers: [
+            HomeSliverAppBar(),
+            SliverToBoxAdapter(
+              child: buildMedicationList(medicationList),
             ),
-          ),
-          SliverToBoxAdapter(
-            child: buildMedicationList(medicationList),
-          ),
-        ]),
+          ],
+        ),
         bottomNavigationBar: BottomBar(),
       ),
     );
@@ -65,11 +60,23 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Container buildFlexibleSpaceBackground() {
-    return Container(
-      padding: EdgeInsets.fromLTRB(Get.width * 0.06, Get.height * 0.02, 0, 0),
-      child: Text("양심이 답이다!", style: Get.theme.textTheme.headline2),
+class HomeSliverAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      elevation: 0,
+      expandedHeight: Get.height * 0.1,
+      stretch: true,
+      flexibleSpace: FlexibleSpaceBar(
+        title: Text("은근히 꾸준히!", style: Get.theme.textTheme.headline1.copyWith(color: Colors.black)),
+        stretchModes: [
+          StretchMode.blurBackground
+        ],
+      ),
+      // floating: true,
     );
   }
 }
+
