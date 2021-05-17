@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       title: '관조 - Contemplation',
       theme: lightTheme,
       home: HomePage(),
-      initialRoute: "/home",
+      initialRoute: "/",
       getPages: [
-        GetPage(name: "/home", page: () => HomePage()),
+        GetPage(name: "/", page: () => HomePage()),
       ],
     );
   }
