@@ -41,14 +41,14 @@ class HomePage extends StatelessWidget {
               subTitle: "현재 상태에 필요한 명상들을 추천해드립니다",
               captions: ["나태", "혼란", "분노", "탐욕", "불안", "두려움", "슬픔", "힘듬"],
               images: [
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
-                "http://images.veritas.kr/data/images/full/22535/painful.jpg",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
               ],
             )
           ],
@@ -74,17 +74,45 @@ class HomeContentBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(Get.width * 0.05, Get.height * 0.03, 0, 0),
+              padding: EdgeInsets.fromLTRB(
+                  Get.width * 0.05, Get.height * 0.03, 0, 0),
               child: Text(title, style: Get.theme.textTheme.headline5),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(Get.width * 0.05, Get.height * 0.003, 0, 0),
+              padding: EdgeInsets.fromLTRB(
+                  Get.width * 0.05, Get.height * 0.003, 0, Get.height * 0.016),
               child: Text(subTitle, style: Get.theme.textTheme.headline6),
             ),
-            // Container(
-            //   height: Get.height * 0.26,
-            //   color: Colors.grey.withOpacity(0.1),
-            // ),
+            SizedBox(
+              height: Get.height * 0.22,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  SizedBox(width: Get.width * 0.04),
+                  for (int i = 0; i < images.length; i++)
+                    Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(Get.width * 0.008),
+                          width: Get.width * 0.33,
+                          height: Get.height * 0.18,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(6)),
+                            image: DecorationImage(
+                              image: images[i].startsWith("http")
+                                  ? NetworkImage(images[i])
+                                  : AssetImage(images[i]),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        if (captions[i] != null) Text(captions[i]),
+                      ],
+                    ),
+                  SizedBox(width: Get.width * 0.04),
+                ],
+              ),
+            )
           ],
         ),
       ),
