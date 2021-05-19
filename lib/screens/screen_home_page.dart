@@ -28,9 +28,9 @@ class HomePage extends StatelessWidget {
             SliverToBoxAdapter(
               child: Container(
                 padding: EdgeInsets.fromLTRB(
-                    0.12 * Get.width, 0, 0, 0.05 * Get.width),
+                    0.11 * Get.width, 0, 0, 0.05 * Get.width),
                 alignment: Alignment.bottomLeft,
-                height: Get.height * 0.1,
+                height: Get.height * 0.08,
                 color: Color.fromRGBO(232, 196, 118, 1),
                 child: Text("임중도원 사이후이!",
                     style: Get.theme.appBarTheme.textTheme.headline2),
@@ -50,7 +50,21 @@ class HomePage extends StatelessWidget {
                 "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
                 "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
               ],
-            )
+            ),
+            HomeContentBox(
+              title: "자주한 명상 목록",
+              subTitle: "익숙한 명상도 다시 처음처럼 해봅시다!",
+              images: [
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
+              ],
+            ),
           ],
         ),
         bottomNavigationBar: BottomBar(),
@@ -80,7 +94,7 @@ class HomeContentBox extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(
-                  Get.width * 0.05, Get.height * 0.003, 0, Get.height * 0.016),
+                  Get.width * 0.05, Get.height * 0.003, 0, Get.height * 0.01),
               child: Text(subTitle, style: Get.theme.textTheme.headline6),
             ),
             SizedBox(
@@ -106,7 +120,7 @@ class HomeContentBox extends StatelessWidget {
                             ),
                           ),
                         ),
-                        if (captions[i] != null) Text(captions[i]),
+                        if (captions != null && i < captions.length) Text(captions[i]),
                       ],
                     ),
                   SizedBox(width: Get.width * 0.04),
