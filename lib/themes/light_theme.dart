@@ -6,6 +6,7 @@ final ThemeData lightTheme = ThemeData(
   // canvasColor: Colors.white,
   // 앱-바 스타일
   appBarTheme: AppBarTheme(
+    backgroundColor: Color.fromRGBO(237, 229, 216, 1),
     iconTheme: IconThemeData(size: Get.width * 0.09, color: Colors.black.withOpacity(0.6),),
     textTheme: TextTheme(
       headline2: TextStyle(
