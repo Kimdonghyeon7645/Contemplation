@@ -1,4 +1,5 @@
 import 'package:contemplation/widgets/bottom_bar.dart';
+import 'package:contemplation/widgets/button_tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,28 +15,7 @@ class MeditationListPage extends StatelessWidget {
         ),
         body: Column(
           children: [
-            SizedBox(
-              height: 0.07 * Get.height,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  for (int i = 0; i < 10; i++)
-                    Container(
-                      child: Text(i.toString()),
-                      margin: EdgeInsets.fromLTRB(
-                          0.035 * Get.width,
-                          0.015 * Get.height,
-                          0.035 * Get.width,
-                          0.015 * Get.height),
-                      width: Get.width * 0.24,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        color: Colors.grey,
-                      ),
-                    ),
-                ],
-              ),
-            )
+            ButtonTabBar(["전체보기", "감정별 보기", "시간별 보기", "테마별 보기"])
           ],
         ),
         bottomNavigationBar: BottomBar(),
