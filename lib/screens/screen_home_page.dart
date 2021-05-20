@@ -1,6 +1,6 @@
+import 'package:contemplation/dummies/home_content_dummy.dart';
 import 'package:contemplation/widgets/bottom_bar.dart';
 import 'package:contemplation/widgets/home/home_content_box.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -41,31 +41,13 @@ class HomePage extends StatelessWidget {
             HomeContentBox(
               title: "지금 기분은 어떠신가요?",
               subTitle: "현재 상태에 필요한 명상들을 추천해드립니다",
-              captions: ["나태", "혼란", "분노", "탐욕", "불안", "두려움", "슬픔", "힘듬"],
-              images: [
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-              ],
+              captions: feelCaptions,
+              images: feelImages,
             ),
             HomeContentBox(
               title: "자주한 명상 목록",
               subTitle: "익숙한 명상도 다시 처음처럼 해봅시다!",
-              images: [
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-                "https://t1.daumcdn.net/cfile/blog/233EBE4357ABDD7314",
-              ],
+              images: feelImages,
             ),
           ],
         ),
