@@ -1,4 +1,6 @@
+import 'package:contemplation/dummies/meditation_tile_dummy.dart';
 import 'package:contemplation/widgets/bottom_bar.dart';
+import 'package:contemplation/widgets/meditation/meditation_content_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,10 +30,10 @@ class MeditationListPage extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Column(children: [],),
-              Column(children: [],),
-              Column(children: [],),
-              Column(children: [],),
+              MeditationContentList(meditationTiles),
+              MeditationContentList(meditationTiles),
+              MeditationContentList(meditationTiles),
+              MeditationContentList(meditationTiles),
             ],
           ),
           bottomNavigationBar: BottomBar(),
