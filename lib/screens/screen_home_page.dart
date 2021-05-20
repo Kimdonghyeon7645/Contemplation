@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               actions: [
                 Padding(
                   padding: EdgeInsets.fromLTRB(
-                      0, 0.002 * Get.width, 0.01 * Get.width, 0),
+                      0, 0.002 * Get.width, 0.02 * Get.width, 0),
                   child: Icon(MdiIcons.recordCircleOutline),
                 )
               ],

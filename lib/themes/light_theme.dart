@@ -7,7 +7,7 @@ final ThemeData lightTheme = ThemeData(
   // 앱-바 스타일
   appBarTheme: AppBarTheme(
     backgroundColor: Color.fromRGBO(237, 229, 216, 1),
-    iconTheme: IconThemeData(size: Get.width * 0.09, color: Colors.black.withOpacity(0.6),),
+    iconTheme: IconThemeData(color: Colors.black.withOpacity(0.8), size: Get.width * 0.07),
     textTheme: TextTheme(
       headline2: TextStyle(
         fontSize: Get.height * 0.038,
@@ -15,6 +15,11 @@ final ThemeData lightTheme = ThemeData(
       ),
     ),
     elevation: 0,
+  ),
+  // 탭-바 스타일
+  tabBarTheme: TabBarTheme(
+    unselectedLabelColor: Colors.black,
+    labelColor: Colors.blue,
   ),
   // 기본 텍스트 스타일
   textTheme: TextTheme(
