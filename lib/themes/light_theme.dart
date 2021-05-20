@@ -27,8 +27,8 @@ final ThemeData lightTheme = ThemeData(
         TextStyle(fontSize: Get.height * 0.04, fontWeight: FontWeight.w400),
     headline2: TextStyle(fontSize: Get.height * 0.038),
     headline4: TextStyle(fontSize: Get.height * 0.024),
-    headline5: TextStyle(fontSize: Get.height * 0.022),
-    headline6: TextStyle(fontSize: Get.height * 0.018, color: Colors.black.withOpacity(0.4), fontWeight: FontWeight.w200),
+    headline5: TextStyle(fontSize: Get.height * 0.02),
+    headline6: TextStyle(fontSize: Get.height * 0.016, color: Colors.black.withOpacity(0.4), fontWeight: FontWeight.w200),
   ),
   // 강조 텍스트 스타일
   accentTextTheme: TextTheme(
