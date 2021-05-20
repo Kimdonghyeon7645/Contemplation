@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color.fromRGBO(237, 229, 216, 1),
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -83,7 +84,6 @@ class HomeContentBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        color: Get.theme.canvasColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

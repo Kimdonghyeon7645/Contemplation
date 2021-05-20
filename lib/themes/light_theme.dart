@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 final ThemeData lightTheme = ThemeData(
-  canvasColor: Color.fromRGBO(237, 229, 216, 1),
-  // canvasColor: Colors.white,
+  // canvasColor: Color.fromRGBO(237, 229, 216, 1),
   // 앱-바 스타일
   appBarTheme: AppBarTheme(
-    backgroundColor: Color.fromRGBO(237, 229, 216, 1),
+    // backgroundColor: Color.fromRGBO(237, 229, 216, 1),
+    backgroundColor: Colors.white,
     iconTheme: IconThemeData(color: Colors.black.withOpacity(0.8), size: Get.width * 0.07),
     textTheme: TextTheme(
       headline2: TextStyle(
