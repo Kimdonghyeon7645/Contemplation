@@ -8,7 +8,7 @@ List<MeditationTile> meditationTiles = [
   }),
   MeditationTile.fromMap({
     "name": "이름2",
-    "imageUrl": "https://lh3.googleusercontent.com/proxy/JkMz7CNmHa4NNnTfNeVAL2Sdm_VYv_6Mz9e7vUH_9YTUXjWwsErKBzBszlHyIxs57F5frIEJ0Or6vkbpVGGmFWP9Z95hm5RMNJvSwUPDyS-KUsjjhNw_RMiHnGtA55y4Y-k",
+    "imageUrl": "https://pds.joins.com/news/component/htmlphoto_mmdata/201909/23/b8abc429-54aa-46a2-bc22-f66a42ff95a9.jpg",
     "length": 2,
   }),
   MeditationTile.fromMap({

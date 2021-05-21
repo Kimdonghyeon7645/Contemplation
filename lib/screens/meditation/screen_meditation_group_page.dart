@@ -16,36 +16,45 @@ class MeditationGroupPage extends StatelessWidget {
                 children: [
                   Container(
                     width: Get.width,
-                    height: Get.height * 0.3,
+                    height: Get.height * 0.35,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        // image: NetworkImage("https://wonderfulmind.co.kr/wp-content/uploads/2017/03/girl-meditating-600x393.jpg"),
-                        image: NetworkImage("https://post-phinf.pstatic.net/MjAxODEwMTZfMTUx/MDAxNTM5NjQ4NTA5MjIz.dsgKhGKfXuofVcz9c5w4nX5LkcEiw82AYq92hj7AM9Ag.VFAzx20y5hX8moXLXXvuQJXMSxyQwSr77aNDrhq3Cfsg.JPEG/twi001t1451843_l.jpg?type=w1200"),
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(
-                            Colors.black.withOpacity(0.3), BlendMode.darken),
-                      ),
+                          image: NetworkImage(
+                              "https://post-phinf.pstatic.net/MjAxODEwMTZfMTUx/MDAxNTM5NjQ4NTA5MjIz.dsgKhGKfXuofVcz9c5w4nX5LkcEiw82AYq92hj7AM9Ag.VFAzx20y5hX8moXLXXvuQJXMSxyQwSr77aNDrhq3Cfsg.JPEG/twi001t1451843_l.jpg?type=w1200"),
+                          fit: BoxFit.cover),
                     ),
                   ),
-                  Positioned(
-                    top: Get.height * 0.06,
-                    left: Get.width * 0.04,
+                  Container(
+                    width: Get.width,
+                    height: Get.height * 0.35,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0.6)
+                        ],
+                      ),
+                    ),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        Spacer(),
                         Text("제목",
                             style: Get.theme.textTheme.headline3
                                 .copyWith(color: Colors.white)),
-                        SizedBox(height: Get.height * 0.014),
+                        SizedBox(height: Get.height * 0.01),
                         SizedBox(
                           width: Get.width * 0.5,
-                            child: Text(
-                          "설명은 이부분에 표시된다는 설명 내용이 길면 길은데로 괜춘 걱정마쇼",
-                          style: Get.theme.textTheme.headline5
-                              .copyWith(color: Colors.white.withOpacity(0.6)),
-                          maxLines: 5,
-                              overflow: TextOverflow.ellipsis,
-                        )),
+                          child: Text("설명은 이부분에 표시된다는 설명 내용이 길면 길은데로 괜춘...",
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.6),
+                                  fontSize: Get.height * 0.016),
+                              maxLines: 5,
+                              overflow: TextOverflow.ellipsis),
+                        ),
+                        SizedBox(height: Get.height * 0.06),
                       ],
                     ),
                   ),
@@ -54,7 +63,7 @@ class MeditationGroupPage extends StatelessWidget {
                           size: Get.width * 0.07, color: Colors.white),
                       onPressed: () => Get.back()),
                   Positioned(
-                    top: Get.height * 0.265,
+                    top: Get.height * 0.315,
                     left: Get.width * 0.04,
                     child: ProgressTextBox(10, 0),
                   ),
