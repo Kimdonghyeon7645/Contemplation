@@ -26,6 +26,7 @@ final ThemeData lightTheme = ThemeData(
     headline1:
         TextStyle(fontSize: Get.height * 0.04, fontWeight: FontWeight.w400),
     headline2: TextStyle(fontSize: Get.height * 0.038),
+    headline3: TextStyle(fontSize: Get.height * 0.03),
     headline4: TextStyle(fontSize: Get.height * 0.024),
     headline5: TextStyle(fontSize: Get.height * 0.02),
     headline6: TextStyle(fontSize: Get.height * 0.016, color: Colors.black.withOpacity(0.4), fontWeight: FontWeight.w200),
@@ -34,7 +35,7 @@ final ThemeData lightTheme = ThemeData(
   accentTextTheme: TextTheme(
     headline2:
         TextStyle(fontSize: Get.height * 0.04, fontWeight: FontWeight.w700),
-    headline5: TextStyle(fontSize: Get.height * 0.022, fontWeight: FontWeight.w700, color: Colors.black.withOpacity(0.6)),
+    headline5: TextStyle(fontSize: Get.height * 0.02, fontWeight: FontWeight.w700, color: Colors.black.withOpacity(0.6)),
   ),
   // 하단 네비게이션-바 스타일
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
