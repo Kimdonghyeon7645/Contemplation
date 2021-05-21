@@ -34,6 +34,7 @@ final ThemeData lightTheme = ThemeData(
   accentTextTheme: TextTheme(
     headline2:
         TextStyle(fontSize: Get.height * 0.04, fontWeight: FontWeight.w700),
+    headline5: TextStyle(fontSize: Get.height * 0.022, fontWeight: FontWeight.w700, color: Colors.black.withOpacity(0.6)),
   ),
   // 하단 네비게이션-바 스타일
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
