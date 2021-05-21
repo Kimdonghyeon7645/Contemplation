@@ -1,7 +1,12 @@
+import 'package:contemplation/models/meditation_group.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MeditationGroupTile extends StatelessWidget {
+  final MeditationGroupTileData meditation;
+
+  MeditationGroupTile(this.meditation);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,10 +16,10 @@ class MeditationGroupTile extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.play_circle_outline, color: Colors.grey),
               onPressed: () {}),
-          Text("명상 제목", style: TextStyle(fontSize: Get.height * 0.018)),
+          Text(meditation.title, style: TextStyle(fontSize: Get.height * 0.018)),
           Spacer(),
           SizedBox(width: Get.width * 0.04),
-          Text("00:00",
+          Text((meditation.second / 60).floor().toString().padLeft(2, "0") + ":" + (meditation.second % 60).toString().padLeft(2, "0"),
               style: TextStyle(
                   fontSize: Get.height * 0.014,
                   color: Colors.black.withOpacity(0.5))),

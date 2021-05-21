@@ -1,12 +1,14 @@
+import 'package:contemplation/dummies/meditation_group_dummy.dart';
+// import 'package:contemplation/models/meditation_group.dart';
 import 'package:contemplation/widgets/meditation/meditation_group_tile.dart';
 import 'package:contemplation/widgets/meditation/progress_text_box.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MeditationGroupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // final MeditationGroupData meditationGroup = Get.arguments;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -21,8 +23,7 @@ class MeditationGroupPage extends StatelessWidget {
                       height: Get.height * 0.35,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: NetworkImage(
-                                "https://post-phinf.pstatic.net/MjAxODEwMTZfMTUx/MDAxNTM5NjQ4NTA5MjIz.dsgKhGKfXuofVcz9c5w4nX5LkcEiw82AYq92hj7AM9Ag.VFAzx20y5hX8moXLXXvuQJXMSxyQwSr77aNDrhq3Cfsg.JPEG/twi001t1451843_l.jpg?type=w1200"),
+                            image: NetworkImage(meditationGroup.imageUrl),
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -43,13 +44,13 @@ class MeditationGroupPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Spacer(),
-                          Text("제목",
+                          Text(meditationGroup.title,
                               style: Get.theme.textTheme.headline3
                                   .copyWith(color: Colors.white)),
                           SizedBox(height: Get.height * 0.01),
                           SizedBox(
                             width: Get.width * 0.85,
-                            child: Text("설명은 이부분에 표시된다는 설명 내용이 길면 길은데로 괜춘 2줄이 넘어가도 괜춘",
+                            child: Text(meditationGroup.description,
                                 style: TextStyle(
                                     color: Colors.white.withOpacity(0.6),
                                     fontSize: Get.height * 0.016),
@@ -72,7 +73,7 @@ class MeditationGroupPage extends StatelessWidget {
                   ],
                 ),
               ),
-              for (int i = 0; i < 10; i++) MeditationGroupTile()
+              for (int i = 0; i < meditationGroup.meditations.length; i++) MeditationGroupTile(meditationGroup.meditations[i]),
             ],
           ),
         ),

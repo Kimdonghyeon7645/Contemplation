@@ -1,19 +1,20 @@
-class MeditationGroup {
-  final String title, description;
-  final List<MeditationGroupTile> meditations;
+class MeditationGroupData {
+  final String title, description, imageUrl;
+  final List<MeditationGroupTileData> meditations;
 
-  MeditationGroup.fromMap(Map<String, dynamic> map)
+  MeditationGroupData.fromMap(Map<String, dynamic> map)
       : title = map["title"],
+        imageUrl = map["imageUrl"],
         description = map["description"],
         meditations = map["meditations"];
 }
 
-class MeditationGroupTile {
+class MeditationGroupTileData {
   final String title;
   final int second;
   final bool isCompleted;
 
-  MeditationGroupTile.fromMap(Map<String, dynamic> map)
+  MeditationGroupTileData.fromMap(Map<String, dynamic> map)
       : title = map["title"],
         second = map["second"],
         isCompleted = map["isCompleted"];
