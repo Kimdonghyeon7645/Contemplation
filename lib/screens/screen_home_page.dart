@@ -10,46 +10,61 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(237, 229, 216, 1),
-        body: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              backgroundColor: Color.fromRGBO(232, 196, 118, 1),
-              floating: true,
-              leading: Icon(Icons.menu),
-              leadingWidth: Get.width * 0.12,
-              actions: [
+        body: Container(
+          child: Container(
+            alignment: Alignment.topLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      0, 0.002 * Get.width, 0.02 * Get.width, 0),
-                  child: Icon(MdiIcons.recordCircleOutline),
-                )
+                  padding: EdgeInsets.all(Get.height * 0.03),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: Get.height * 0.02),
+                      Text(" 좋은 하루입니다",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: Get.height * 0.036)),
+                      SizedBox(height: Get.height * 0.004),
+                      Text("오늘도 처음처럼 참나에 접속해봐요",
+                          style: TextStyle(
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: Get.height * 0.023)),
+                    ],
+                  ),
+                ),
+                Spacer(),
+                Padding(
+                  padding: EdgeInsets.only(left: Get.width * 0.06, bottom: Get.height * 0.014),
+                  child: Text("오늘의 추천 명상",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: Get.height * 0.02)),
+                ),
+                SizedBox(
+                  height: Get.height * 0.17,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    itemExtent: Get.width * 0.4,
+                    children: [
+                      Container(
+                        color: Colors.blue,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: Get.height * 0.02),
               ],
-              elevation: 0,
             ),
-            SliverToBoxAdapter(
-              child: Container(
-                padding: EdgeInsets.fromLTRB(
-                    0.11 * Get.width, 0, 0, 0.05 * Get.width),
-                alignment: Alignment.bottomLeft,
-                height: Get.height * 0.08,
-                color: Color.fromRGBO(232, 196, 118, 1),
-                child: Text("임중도원 사이후이!",
-                    style: Get.theme.appBarTheme.textTheme.headline2),
-              ),
-            ),
-            HomeContentBox(
-              title: "지금 기분은 어떠신가요?",
-              subTitle: "현재 상태에 필요한 명상들을 추천해드립니다",
-              captions: feelCaptions,
-              images: feelImages,
-            ),
-            HomeContentBox(
-              title: "자주한 명상 목록",
-              subTitle: "익숙한 명상도 다시 처음처럼 해봅시다!",
-              images: feelImages,
-            ),
-          ],
+            height: Get.height,
+            width: Get.width,
+            color: Colors.black.withOpacity(0.2),
+          ),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("images/daedun.jpg"), fit: BoxFit.cover),
+          ),
         ),
         bottomNavigationBar: BottomBar(),
       ),
