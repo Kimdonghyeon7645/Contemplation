@@ -9,10 +9,13 @@ class MeditationContentList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        for (int i = 0; i < tiles.length; i++) MeditationContentTile(tiles[i]),
-      ],
+    return Container(
+      color: Colors.grey.withOpacity(0.16),
+      child: ListView(
+        children: [
+          for (int i = 0; i < tiles.length; i++) MeditationContentTile(tiles[i]),
+        ],
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:contemplation/dummies/meditation_group_dummy.dart';
 // import 'package:contemplation/models/meditation_group.dart';
 import 'package:contemplation/widgets/meditation/meditation_group_tile.dart';
-import 'package:contemplation/widgets/meditation/progress_text_box.dart';
+import 'package:contemplation/widgets/meditation/meditations_progress_box.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -68,7 +68,7 @@ class MeditationGroupPage extends StatelessWidget {
                     Positioned(
                       top: Get.height * 0.315,
                       left: Get.width * 0.04,
-                      child: ProgressTextBox(10, 0),
+                      child: MeditationsProgressBox(10, 0),
                     ),
                   ],
                 ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProgressTextBox extends StatelessWidget {
+class MeditationsProgressBox extends StatelessWidget {
   final int allMeditation, finishMeditation;
 
-  ProgressTextBox(this.allMeditation, this.finishMeditation);
+  MeditationsProgressBox(this.allMeditation, this.finishMeditation);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ProgressTextBox extends StatelessWidget {
             ),
           ),
           SizedBox(width: Get.width * 0.02),
-          Text((finishMeditation/allMeditation).toString() + "%"),
+          Text((finishMeditation ~/ allMeditation).toString() + "%"),
           SizedBox(width: Get.width * 0.04),
         ],
       ),
