@@ -12,7 +12,10 @@ class MeditationRunPage extends StatelessWidget {
         centerTitle: true,
         title: Text("오늘의 추천 명상", style: TextStyle(color: Colors.black)),
         actions: [
-          IconButton(icon: Icon(Icons.favorite_border), onPressed: () {},),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
         ],
       ),
       body: Stack(
@@ -22,40 +25,33 @@ class MeditationRunPage extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage("images/명상02.jpg"),
                   // image: AssetImage("images/명상01.jpg"),
-                  fit: BoxFit.cover
-              ),
+                  fit: BoxFit.cover),
             ),
             child: Container(
-              height: Get.height * 0.62,
+              height: Get.height * 0.72,
               width: Get.width,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.black.withOpacity(0.2),
-                    Colors.black.withOpacity(0),
-                    Colors.black.withOpacity(0.4),
-                  ],
-                )
-              ),
+                  gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black.withOpacity(0.2),
+                  Colors.black.withOpacity(0),
+                  Colors.black.withOpacity(0.4),
+                ],
+              )),
               child: Column(
                 children: [
                   SizedBox(height: Get.height * 0.05),
-                  Text("새벽 10분 명상", style: TextStyle(color: Colors.white, fontSize: Get.height * 0.036)),
+                  Text("새벽 10분 명상",
+                      style: TextStyle(
+                          color: Colors.white, fontSize: Get.height * 0.036)),
                   SizedBox(height: Get.height * 0.006),
-                  Text("일상의 명상", style: TextStyle(color: Colors.white.withOpacity(0.6), fontSize: Get.height * 0.02)),
-                  Spacer(flex: 1),
-                  Container(
-                    height: Get.height * 0.11,
-                    width: Get.height * 0.11,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.3)
-                    ),
-                    child: Icon(Icons.play_arrow, color: Colors.white.withOpacity(0.8), size: Get.height * 0.07),
-                  ),
-                  Spacer(flex: 2),
+                  Text("일상의 명상",
+                      style: TextStyle(
+                          color: Colors.white.withOpacity(0.6),
+                          fontSize: Get.height * 0.02)),
+                  Spacer(),
                 ],
               ),
             ),
@@ -63,46 +59,81 @@ class MeditationRunPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Get.height * 0.32,
+              height: Get.height * 0.22,
               width: Get.width,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30))
-              ),
-              padding: EdgeInsets.all(Get.height * 0.04),
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(30))),
+              padding: EdgeInsets.fromLTRB(
+                  Get.width * 0.05, Get.height * 0.033, Get.width * 0.05, 0),
               child: Column(
                 children: [
                   Stack(
                     alignment: Alignment.centerLeft,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: Get.width * 0.01, right: Get.width * 0.01),
+                        padding: EdgeInsets.only(
+                            left: Get.width * 0.01, right: Get.width * 0.01),
                         child: LinearProgressIndicator(
                           value: 0.6,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.teal),
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.teal),
                           backgroundColor: Colors.grey.withOpacity(0.2),
-                          minHeight: Get.height * 0.008,
+                          minHeight: Get.height * 0.006,
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: Get.width * (0.79 - (0.79 * 0.4))),
+                        margin: EdgeInsets.only(
+                            left: Get.width * (0.89 - (0.89 * 0.4))),
                         height: Get.height * 0.018,
                         width: Get.height * 0.018,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.teal,
                         ),
-                      )
+                      ),
                     ],
                   ),
-                  SizedBox(height: Get.height * 0.01),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("06:01"),
-                      Text("09:58"),
+                      SizedBox(width: Get.width * 0.01),
+                      Text("06:01",
+                          style: TextStyle(
+                              fontSize: Get.height * 0.015,
+                              color: Colors.grey)),
+                      Spacer(),
+                      Text("09:58",
+                          style: TextStyle(
+                              fontSize: Get.height * 0.015,
+                              color: Colors.grey)),
+                      SizedBox(width: Get.width * 0.01),
                     ],
-                  )
+                  ),
+                  SizedBox(height: Get.height * 0.026),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: Get.width * 0.01, right: Get.width * 0.01),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.library_books,
+                            size: Get.height * 0.03,
+                            color: Colors.teal.withOpacity(0.7)),
+                        Icon(Icons.fast_rewind,
+                            size: Get.height * 0.04,
+                            color: Colors.teal.withOpacity(0.7)),
+                        Icon(Icons.play_arrow,
+                            size: Get.height * 0.073, color: Colors.teal),
+                        Icon(Icons.fast_forward,
+                            size: Get.height * 0.04,
+                            color: Colors.teal.withOpacity(0.7)),
+                        Icon(Icons.favorite_border,
+                            size: Get.height * 0.03,
+                            color: Colors.teal.withOpacity(0.7)),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
