@@ -28,7 +28,7 @@ class MeditationRunPage extends StatelessWidget {
                   fit: BoxFit.cover),
             ),
             child: Container(
-              height: Get.height * 0.72,
+              height: Get.height * 0.73,
               width: Get.width,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -59,7 +59,7 @@ class MeditationRunPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Get.height * 0.22,
+              height: Get.height * 0.21,
               width: Get.width,
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -78,7 +78,7 @@ class MeditationRunPage extends StatelessWidget {
                         child: LinearProgressIndicator(
                           value: 0.6,
                           valueColor:
-                              AlwaysStoppedAnimation<Color>(Colors.teal),
+                              AlwaysStoppedAnimation<Color>(Colors.indigo),
                           backgroundColor: Colors.grey.withOpacity(0.2),
                           minHeight: Get.height * 0.006,
                         ),
@@ -90,7 +90,7 @@ class MeditationRunPage extends StatelessWidget {
                         width: Get.height * 0.018,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.teal,
+                          color: Colors.indigo,
                         ),
                       ),
                     ],
@@ -119,18 +119,18 @@ class MeditationRunPage extends StatelessWidget {
                       children: [
                         Icon(Icons.library_books,
                             size: Get.height * 0.03,
-                            color: Colors.teal.withOpacity(0.7)),
+                            color: Colors.indigo.withOpacity(0.8)),
                         Icon(Icons.fast_rewind,
                             size: Get.height * 0.04,
-                            color: Colors.teal.withOpacity(0.7)),
+                            color: Colors.indigo.withOpacity(0.8)),
                         Icon(Icons.play_arrow,
-                            size: Get.height * 0.073, color: Colors.teal),
+                            size: Get.height * 0.073, color: Colors.indigo),
                         Icon(Icons.fast_forward,
                             size: Get.height * 0.04,
-                            color: Colors.teal.withOpacity(0.7)),
+                            color: Colors.indigo.withOpacity(0.8)),
                         Icon(Icons.favorite_border,
                             size: Get.height * 0.03,
-                            color: Colors.teal.withOpacity(0.7)),
+                            color: Colors.indigo.withOpacity(0.8)),
                       ],
                     ),
                   ),
