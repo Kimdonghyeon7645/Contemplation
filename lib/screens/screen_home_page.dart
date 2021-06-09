@@ -20,11 +20,11 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: Get.height * 0.02),
-                      Text(" 좋은 하루입니다",
+                      Text("좋은 하루입니다",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: Get.height * 0.036)),
-                      SizedBox(height: Get.height * 0.004),
+                      SizedBox(height: Get.height * 0.01),
                       Text("오늘도 처음처럼 참나에 접속해봐요",
                           style: TextStyle(
                               color: Colors.white.withOpacity(0.6),
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black.withOpacity(0.55),
+                  Colors.black.withOpacity(0.3),
                   Colors.black.withOpacity(0),
                   Colors.black.withOpacity(0.6),
                 ],
