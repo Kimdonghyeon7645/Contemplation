@@ -30,9 +30,9 @@ class MeditationContentTile extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.toNamed("/meditation/group"),
       child: Container(
-        height: Get.height * 0.13,
+        height: Get.height * 0.14,
         margin: EdgeInsets.fromLTRB(Get.width * 0.05, Get.height * 0.01,
-            Get.width * 0.05, Get.height * 0.006),
+            Get.width * 0.05, Get.height * 0.002),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(15)),
             image: DecorationImage(

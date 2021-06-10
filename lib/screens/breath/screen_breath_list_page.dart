@@ -10,7 +10,9 @@ class BreathListPage extends StatelessWidget {
         title: Text("호흡", style: TextStyle(color: Colors.black)),
       ),
       body: Column(
-        children: [],
+        children: [
+
+        ],
       ),
       bottomNavigationBar: BottomBar(),
     );
