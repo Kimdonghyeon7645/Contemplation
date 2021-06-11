@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MeditationRunPage extends StatelessWidget {
+  final Color btnColor = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,18 +120,18 @@ class MeditationRunPage extends StatelessWidget {
                       children: [
                         Icon(Icons.library_books,
                             size: Get.height * 0.03,
-                            color: Colors.indigo.withOpacity(0.8)),
+                            color: btnColor.withOpacity(0.8)),
                         Icon(Icons.fast_rewind,
-                            size: Get.height * 0.04,
-                            color: Colors.indigo.withOpacity(0.8)),
+                            size: Get.height * 0.035,
+                            color: btnColor.withOpacity(0.8)),
                         Icon(Icons.play_arrow,
-                            size: Get.height * 0.073, color: Colors.indigo),
+                            size: Get.height * 0.07, color: btnColor),
                         Icon(Icons.fast_forward,
-                            size: Get.height * 0.04,
-                            color: Colors.indigo.withOpacity(0.8)),
+                            size: Get.height * 0.035,
+                            color: btnColor.withOpacity(0.8)),
                         Icon(Icons.favorite_border,
                             size: Get.height * 0.03,
-                            color: Colors.indigo.withOpacity(0.8)),
+                            color: btnColor.withOpacity(0.8)),
                       ],
                     ),
                   ),
