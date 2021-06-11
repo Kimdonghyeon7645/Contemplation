@@ -11,8 +11,7 @@ class MeditationListPage extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("명상", style: TextStyle(color: Colors.black)),
-          centerTitle: true,
+          title: Text("명상", style: Get.theme.appBarTheme.titleTextStyle),
           // actions: [Icon(Icons.search)],
           bottom: TabBar(
             tabs: [

@@ -6,7 +6,9 @@ final ThemeData lightTheme = ThemeData(
   // 앱-바 스타일
   appBarTheme: AppBarTheme(
     // backgroundColor: Color.fromRGBO(237, 229, 216, 1),
+    centerTitle: true,
     backgroundColor: Colors.white,
+    titleTextStyle: TextStyle(color: Colors.black),
     iconTheme: IconThemeData(color: Colors.black.withOpacity(0.8), size: Get.width * 0.07),
     textTheme: TextTheme(
       headline2: TextStyle(

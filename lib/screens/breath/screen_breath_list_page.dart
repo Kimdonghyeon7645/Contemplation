@@ -7,8 +7,7 @@ class BreathListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: Text("호흡", style: TextStyle(color: Colors.black)),
+        title: Text("호흡", style: Get.theme.appBarTheme.titleTextStyle),
       ),
       body: Column(
         children: [
