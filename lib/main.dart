@@ -1,5 +1,6 @@
 import 'package:contemplation/controllers/bottom_bar_index_controller.dart';
 import 'package:contemplation/screens/breath/screen_breath_list_page.dart';
+import 'package:contemplation/screens/breath/screen_breath_run_page.dart';
 import 'package:contemplation/screens/meditation/screen_meditation_group_page.dart';
 import 'package:contemplation/screens/meditation/screen_meditation_list_page.dart';
 import 'package:contemplation/screens/meditation/screen_meditation_run_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/meditation/group", page: () => MeditationGroupPage()),
         GetPage(name: "/meditation", page: () => MeditationRunPage()),
         GetPage(name: "/breath/list", page: () => BreathListPage()),
+        GetPage(name: "/breath", page: () => BreathRunPage()),
       ],
     );
   }

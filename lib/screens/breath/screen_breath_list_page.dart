@@ -10,51 +10,42 @@ class BreathListPage extends StatelessWidget {
         title: Text("호흡", style: Get.theme.appBarTheme.titleTextStyle),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: Get.height * 0.1),
-          Text("09:10", style: TextStyle(color: Colors.black.withOpacity(0.6), fontSize: Get.height * 0.025)),
-          SizedBox(height: Get.height * 0.014),
+          SizedBox(height: Get.height * 0.03),
+          Padding(
+            padding: EdgeInsets.only(left: Get.width * 0.04),
+            child: Text("최근 수련 다시하기",style: TextStyle(fontSize: Get.height * 0.02, color: Colors.black.withOpacity(0.5))),
+          ),
+          SizedBox(height: Get.height * 0.01),
           SizedBox(
-            width: Get.width,
-            child: Stack(
-              alignment: Alignment.center,
+            height: Get.width * 0.3,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              itemExtent: Get.width * 0.47,
               children: [
-                Container(
-                  height: Get.width * 0.5,
-                  width: Get.width * 0.5,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.grey.withOpacity(0.16),
-                    // border: Border.all(width: Get.height * 0.02, color: Colors.black.withOpacity(0.1)),
+                for (int i in [1, 2, 3])
+                GestureDetector(
+                  onTap: () => Get.toNamed("/breath"),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                      color: Colors.amber.withOpacity(0.26)
+                    ),
+                    margin: EdgeInsets.only(left: Get.width * 0.02),
+                    padding: EdgeInsets.all(Get.width * 0.02),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("8초~12초"),
+                        Text("10분"),
+                      ],
+                    ),
                   ),
                 ),
-                Container(
-                  height: Get.width * 0.2,
-                  width: Get.width * 0.2,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    // color: Colors.redAccent.withOpacity(0.7),
-                    color: Colors.blueAccent.withOpacity(0.7),
-                  ),
-                ),
-                Container(
-                  height: Get.width * 0.4,
-                  width: Get.width * 0.4,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    // color: Colors.redAccent.withOpacity(0.7),
-                    color: Colors.blueAccent.withOpacity(0.5),
-                  ),
-                ),
-                Text("3", style: TextStyle(
-                  fontSize: Get.height * 0.07,
-                  color: Colors.white
-                )),
               ],
             ),
           ),
-          SizedBox(height: Get.height * 0.022),
-          Text("내쉬세요", style: TextStyle(color: Colors.black.withOpacity(0.6), fontSize: Get.height * 0.027)),
         ],
       ),
       bottomNavigationBar: BottomBar(),
