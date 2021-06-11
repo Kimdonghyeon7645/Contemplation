@@ -88,7 +88,7 @@ class MeditationGroupPage extends StatelessWidget {
                   height: Get.height * 0.062,
                   margin: EdgeInsets.only(bottom: Get.height * 0.02),
                   decoration: BoxDecoration(
-                    color: Colors.lightBlue,
+                    color: Colors.indigo,
                     borderRadius: BorderRadius.all(Radius.circular(12))
                   ),
                   alignment: Alignment.center,

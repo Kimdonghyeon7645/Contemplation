@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
       title: '관조 - Contemplation',
-      // initialRoute: "/",    // home: 속성과 중복해서 쓰지 않도록 주의
-      home: HomePage(),
+      initialRoute: "/",    // home: 속성과 중복해서 쓰지 않도록 주의
       defaultTransition: Transition.noTransition,
       getPages: [
         GetPage(name: "/", page: () => HomePage()),
