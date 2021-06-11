@@ -6,13 +6,18 @@ class BreathRunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("8초-10초 20분 호흡", style: Get.theme.appBarTheme.titleTextStyle),
+        title:
+            Text("8-10초 20분 호흡", style: Get.theme.appBarTheme.titleTextStyle),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // SizedBox(height: Get.height * 0.1),
-          Text("09:10", style: TextStyle(color: Colors.black.withOpacity(0.6), fontSize: Get.height * 0.025)),
+          Text("09:10",
+              style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),
+                  fontSize: Get.height * 0.027,
+                  fontWeight: FontWeight.w300)),
           SizedBox(height: Get.height * 0.014),
           SizedBox(
             width: Get.width,
@@ -29,8 +34,8 @@ class BreathRunPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: Get.width * 0.2,
-                  width: Get.width * 0.2,
+                  height: Get.width * 0.21,
+                  width: Get.width * 0.21,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     // color: Colors.redAccent.withOpacity(0.7),
@@ -46,15 +51,20 @@ class BreathRunPage extends StatelessWidget {
                     color: Colors.blueAccent.withOpacity(0.5),
                   ),
                 ),
-                Text("3", style: TextStyle(
-                    fontSize: Get.height * 0.07,
-                    color: Colors.white
-                )),
+                Text("90",
+                    style: TextStyle(
+                        fontSize: Get.height * 0.055,
+                        fontWeight: FontWeight.w200)),
               ],
             ),
           ),
           SizedBox(height: Get.height * 0.022),
-          Text("내쉬세요", style: TextStyle(color: Colors.black.withOpacity(0.6), fontSize: Get.height * 0.027)),
+          Text("내쉬세요",
+              style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),
+                  fontSize: Get.height * 0.028,
+                  fontWeight: FontWeight.w300)),
+          SizedBox(height: Get.height * 0.1),
         ],
       ),
     );
