@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("images/daedun.jpg"), fit: BoxFit.cover),
+              image: AssetImage("images/daedunsan.jpg"), fit: BoxFit.cover),
         ),
       ),
       bottomNavigationBar: BottomBar(),
