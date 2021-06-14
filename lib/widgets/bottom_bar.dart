@@ -14,8 +14,7 @@ class BottomBar extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "홈"),
           BottomNavigationBarItem(icon: Icon(MdiIcons.recordCircleOutline), label: "명상"),
           BottomNavigationBarItem(icon: Icon(MdiIcons.tailwind), label: "호흡"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "프로필"),
-          BottomNavigationBarItem(icon: Icon(Icons.widgets_rounded), label: "전체"),
+          BottomNavigationBarItem(icon: Icon(Icons.assessment), label: "기록"),
         ],
         onTap: (int index) => controller.setIndex(index)
       ),

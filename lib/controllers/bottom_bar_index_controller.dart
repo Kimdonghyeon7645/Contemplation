@@ -6,8 +6,7 @@ class BottomBarIndexController extends GetxController {
     "/",
     "/meditation/list",
     "/breath/list",
-    "/",
-    "/",
+    "/record",
   ];
 
   setIndex(int i) {
