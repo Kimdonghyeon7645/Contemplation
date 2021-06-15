@@ -42,16 +42,16 @@ class MeditationContentTile extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         child: Container(
           width: Get.width,
-          height: Get.height * 0.04,
+          height: Get.height * 0.045,
           alignment: Alignment.centerLeft,
           padding: EdgeInsets.fromLTRB(Get.width * 0.04, 0, Get.width * 0.04, 0),
           child: Row(
             children: [
-              Text(tile.name, style: TextStyle(color: Colors.white)),
+              Text(tile.name, style: TextStyle(color: Colors.white, fontSize: Get.height * 0.019)),
               Spacer(),
               Icon(Icons.filter_none, color: Colors.white, size: Get.width * 0.04),
               SizedBox(width: Get.width * 0.01),
-              Text(tile.length.toString(), style: TextStyle(color: Colors.white)),
+              Text(tile.length.toString(), style: TextStyle(color: Colors.white, fontSize: Get.height * 0.017)),
             ],
           ),
           decoration: BoxDecoration(
