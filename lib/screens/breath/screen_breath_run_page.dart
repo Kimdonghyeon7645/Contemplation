@@ -7,8 +7,8 @@ class BreathRunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(BreathRunController([
       [2, 3],
-      [3, 3],
-      [4, 3]
+      // [3, 3],
+      // [4, 3]
     ]));
     return Scaffold(
       appBar: AppBar(
@@ -56,7 +56,7 @@ class BreathRunPage extends StatelessWidget {
                     ),
                   ),
                   AnimatedContainer(
-                    duration: Duration(seconds: ctr.secondIndex < ctr.secondList.length ? ctr.secondList[ctr.secondIndex][0] : 0),
+                    duration: Duration(seconds: ctr.secondIndex < ctr.secondList.length ? ctr.secondList[ctr.secondIndex][0]-1 : 0),
                     height: ctr.breathCount % 2 == 0 && ctr.readySecond < 1
                         ? Get.width * 0.5
                         : Get.width * 0.22,

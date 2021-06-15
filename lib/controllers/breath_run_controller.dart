@@ -18,17 +18,16 @@ class BreathRunController extends GetxController {
       } else {
         if (secondIndex > secondList.length - 1) {
           t.cancel();
-        } else if (showSecond > secondList[secondIndex][0]) {
+        } else if (showSecond >= secondList[secondIndex][0]) {
           breathCount++;
           showSecond = 1;
-          if (breathCount ~/ 2 > secondList[secondIndex][1]) {
+          if (breathCount ~/ 2 >= secondList[secondIndex][1]) {
             breathCount = 0;
             secondIndex++;
           }
         } else {
           showSecond++;
         }
-        print("showSecond $showSecond, breathCount $breathCount, secondIndex $secondIndex");
       }
       update();
     });
