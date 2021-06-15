@@ -21,12 +21,12 @@ class HomePage extends StatelessWidget {
                     SizedBox(height: Get.height * 0.05),
                     Text("좋은 하루입니다",
                         style: TextStyle(
-                            color: Colors.white, fontSize: Get.height * 0.036)),
-                    SizedBox(height: Get.height * 0.01),
+                            color: Colors.white, fontSize: Get.height * 0.04, fontWeight: FontWeight.w300)),
+                    SizedBox(height: Get.height * 0.004),
                     Text("오늘도 처음처럼 참나에 접속해봐요",
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                            fontSize: Get.height * 0.023)),
+                            color: Colors.white.withOpacity(0.7),
+                            fontSize: Get.height * 0.023, fontWeight: FontWeight.w300)),
                   ],
                 ),
               ),
