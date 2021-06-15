@@ -85,20 +85,35 @@ class BreathListPage extends StatelessWidget {
                 children: [
                   for (int i = 0; i < 10; i++)
                     Container(
-                      margin: EdgeInsets.only(top: Get.height * 0.01),
-                      height: Get.height * 0.105,
+                      margin: EdgeInsets.only(top: Get.height * 0.008),
+                      height: Get.height * 0.115,
                       width: Get.width * 0.92,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text("기본 호흡"),
-                          Text("3-6초"),
-                          Text("20분"),
+                          SizedBox(width: Get.width * 0.02),
+                          Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("images/daedunsan.jpg"),
+                                fit: BoxFit.cover
+                              ),
+                              borderRadius: BorderRadius.all(Radius.circular(22))
+                            ),
+                            height: Get.height * 0.095,
+                            width: Get.height * 0.095,
+                          ),
+                          SizedBox(width: Get.width * 0.025),
+                          Text("기본 호흡", style: TextStyle(fontSize: Get.height * 0.02)),
+                          SizedBox(width: Get.width * 0.04),
+                          Text("3-6초", style: TextStyle(color: Colors.black.withOpacity(0.5))),
+                          Spacer(),
+                          Text("20분", style: TextStyle(color: Colors.black.withOpacity(0.3))),
+                          SizedBox(width: Get.width * 0.05),
                         ],
                       ),
                       decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.14),
-                          borderRadius: BorderRadius.all(Radius.circular(6))),
+                          color: Colors.amber.withOpacity(0.12),
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
                     ),
                 ],
               ),
