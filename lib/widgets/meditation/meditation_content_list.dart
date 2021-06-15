@@ -1,4 +1,5 @@
 import 'package:contemplation/models/meditation_list_tile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,11 +11,14 @@ class MeditationContentList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey.withOpacity(0.16),
-      child: ListView(
-        children: [
-          for (int i = 0; i < tiles.length; i++) MeditationContentTile(tiles[i]),
-        ],
+      child: ListView.separated(
+        itemBuilder: (_, i) => MeditationContentTile(tiles[i]),
+        itemCount: tiles.length,
+        separatorBuilder: (_, i) => Divider(
+          height: 0,
+          thickness: 1,
+          color: Colors.grey.withOpacity(0.1),
+        ),
       ),
     );
   }
@@ -30,34 +34,28 @@ class MeditationContentTile extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.toNamed("/meditation/group"),
       child: Container(
-        height: Get.height * 0.14,
-        margin: EdgeInsets.fromLTRB(Get.width * 0.05, Get.height * 0.01,
-            Get.width * 0.05, Get.height * 0.002),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-            image: DecorationImage(
-              image: NetworkImage(tile.imageUrl),
-              fit: BoxFit.cover,
-            )),
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          width: Get.width,
-          height: Get.height * 0.04,
-          alignment: Alignment.centerLeft,
-          padding: EdgeInsets.fromLTRB(Get.width * 0.04, 0, Get.width * 0.04, 0),
-          child: Row(
-            children: [
-              Text(tile.name, style: TextStyle(color: Colors.white)),
-              Spacer(),
-              Icon(Icons.filter_none, color: Colors.white, size: Get.width * 0.04),
-              SizedBox(width: Get.width * 0.01),
-              Text(tile.length.toString(), style: TextStyle(color: Colors.white)),
-            ],
-          ),
-          decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.3),
-              borderRadius: BorderRadius.vertical(top: Radius.zero, bottom: Radius.circular(15)),
-          ),
+        color: Colors.white,
+        height: Get.height * 0.135,
+        child: Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(40)),
+                  image: DecorationImage(
+                      image: NetworkImage(tile.imageUrl), fit: BoxFit.cover)),
+              height: Get.height * 0.11,
+              width: Get.height * 0.11,
+            ),
+            SizedBox(width: Get.width * 0.03),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("제목"),
+                Text("보조설명"),
+              ],
+            ),
+          ],
         ),
       ),
     );
