@@ -5,9 +5,19 @@ import 'package:get/get.dart';
 class BreathRunPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put(BreathRunController());
+    Get.put(BreathRunController([
+      [2, 3],
+      [3, 3],
+      [4, 3]
+    ]));
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Get.find<BreathRunController>().timer.cancel();
+              Get.back();
+            }),
         title:
             Text("8-10초 20분 호흡", style: Get.theme.appBarTheme.titleTextStyle),
       ),
