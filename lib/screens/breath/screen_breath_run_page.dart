@@ -12,12 +12,11 @@ class BreathRunPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // SizedBox(height: Get.height * 0.1),
           Text("09:10",
               style: TextStyle(
                   color: Colors.black.withOpacity(0.6),
-                  fontSize: Get.height * 0.027,
-                  fontWeight: FontWeight.w300)),
+                  fontSize: Get.height * 0.026,
+                  fontWeight: FontWeight.w400)),
           SizedBox(height: Get.height * 0.014),
           SizedBox(
             width: Get.width,
@@ -54,7 +53,7 @@ class BreathRunPage extends StatelessWidget {
                 Text("90",
                     style: TextStyle(
                         fontSize: Get.height * 0.055,
-                        fontWeight: FontWeight.w200)),
+                        fontWeight: FontWeight.w300)),
               ],
             ),
           ),
@@ -62,7 +61,7 @@ class BreathRunPage extends StatelessWidget {
           Text("내쉬세요",
               style: TextStyle(
                   color: Colors.black.withOpacity(0.6),
-                  fontSize: Get.height * 0.028,
+                  fontSize: Get.height * 0.026,
                   fontWeight: FontWeight.w300)),
           SizedBox(height: Get.height * 0.1),
         ],
