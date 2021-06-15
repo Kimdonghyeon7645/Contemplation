@@ -7,8 +7,8 @@ class BreathRunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(BreathRunController([
       [2, 3],
-      // [3, 3],
-      // [4, 3]
+      [3, 3],
+      [4, 3]
     ]));
     return Scaffold(
       appBar: AppBar(
