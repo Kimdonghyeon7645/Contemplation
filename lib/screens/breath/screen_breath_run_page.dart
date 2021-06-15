@@ -63,7 +63,11 @@ class BreathRunPage extends StatelessWidget {
                       color: Colors.blueAccent.withOpacity(0.5),
                     ),
                   ),
-                  Text(ctr.readySecond.toString() ?? 3,
+                  Text(
+                      (ctr.readySecond > 0
+                              ? ctr.readySecond
+                              : ctr.showSecond)
+                          .toString(),
                       style: TextStyle(
                           fontSize: Get.height * 0.055,
                           fontWeight: FontWeight.w300)),

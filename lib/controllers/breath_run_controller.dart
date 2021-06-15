@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 class BreathRunController extends GetxController {
   final List<List<int>> secondList;
   int readySecond = 3;
+  int showSecond = 1;
   int secondIndex = 0;
-  int showSecond = 0;
   int breathCount = 0;
   Timer timer;
 
