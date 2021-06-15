@@ -32,7 +32,15 @@ class CalendarBox extends StatelessWidget {
         children: [
           if (mode == MODE.DAY)
             TableRow(children: [
-              for (int i = 0; i < numOfColumns; i++) DayCell(text: dayName[i])
+              for (int i = 0; i < numOfColumns; i++)
+                DayCell(
+                  text: dayName[i],
+                  textColor: i == 0
+                      ? Colors.redAccent
+                      : i == numOfColumns - 1
+                          ? Colors.blueAccent
+                          : Colors.black,
+                ),
             ]),
           for (int i = beforeDays; i < numOfDays; i += numOfColumns)
             TableRow(children: [
@@ -45,6 +53,11 @@ class CalendarBox extends StatelessWidget {
                         : ctr.calendarValueMap.containsKey(monthYear)
                             ? ctr.calendarValueMap[monthYear][j]
                             : 0),
+                    textColor: j == i
+                        ? Colors.redAccent
+                        : j == i + numOfColumns - 1
+                            ? Colors.blueAccent
+                            : Colors.black,
                   ),
                 ),
             ]),
