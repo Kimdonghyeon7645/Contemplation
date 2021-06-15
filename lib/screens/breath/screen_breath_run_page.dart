@@ -46,27 +46,32 @@ class BreathRunPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: Get.width * 0.21,
-                    width: Get.width * 0.21,
+                    height: Get.width * 0.22,
+                    width: Get.width * 0.22,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      // color: Colors.redAccent.withOpacity(0.7),
-                      color: Colors.blueAccent.withOpacity(0.7),
+                      color: ctr.breathCount % 2 == 0
+                          ? Colors.redAccent.withOpacity(0.5)
+                          : Colors.blueAccent.withOpacity(0.5),
                     ),
                   ),
-                  Container(
-                    height: Get.width * 0.4,
-                    width: Get.width * 0.4,
+                  AnimatedContainer(
+                    duration: Duration(seconds: ctr.secondIndex < ctr.secondList.length ? ctr.secondList[ctr.secondIndex][0] : 0),
+                    height: ctr.breathCount % 2 == 0 && ctr.readySecond < 1
+                        ? Get.width * 0.5
+                        : Get.width * 0.22,
+                    width: ctr.breathCount % 2 == 0 && ctr.readySecond < 1
+                        ? Get.width * 0.5
+                        : Get.width * 0.22,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      // color: Colors.redAccent.withOpacity(0.7),
-                      color: Colors.blueAccent.withOpacity(0.5),
+                      color: ctr.breathCount % 2 == 0
+                          ? Colors.redAccent.withOpacity(0.7)
+                          : Colors.blueAccent.withOpacity(0.7),
                     ),
                   ),
                   Text(
-                      (ctr.readySecond > 0
-                              ? ctr.readySecond
-                              : ctr.showSecond)
+                      (ctr.readySecond > 0 ? ctr.readySecond : ctr.showSecond)
                           .toString(),
                       style: TextStyle(
                           fontSize: Get.height * 0.055,
@@ -75,7 +80,12 @@ class BreathRunPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: Get.height * 0.022),
-            Text(ctr.readySecond > 0 ? "호흡을 준비해주세요" : " 내쉬세요 ",
+            Text(
+                ctr.readySecond > 0
+                    ? "호흡을 준비해주세요"
+                    : ctr.breathCount % 2 == 0
+                        ? " 들이쉬세요 "
+                        : " 내쉬세요 ",
                 style: TextStyle(
                     color: Colors.black.withOpacity(0.6),
                     fontSize: Get.height * 0.026,
