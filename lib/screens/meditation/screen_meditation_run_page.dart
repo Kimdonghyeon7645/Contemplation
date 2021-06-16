@@ -10,7 +10,7 @@ class MeditationRunPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("오늘의 추천 명상", style: TextStyle(color: Colors.black)),
+        title: Text(Get.arguments["group"] ?? "그룹없음", style: TextStyle(color: Colors.black)),
         actions: [
           IconButton(
             icon: Icon(Icons.more_vert),
@@ -43,11 +43,11 @@ class MeditationRunPage extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: Get.height * 0.05),
-                  Text("새벽 10분 명상",
+                  Text(Get.arguments["name"] ?? "제목없는 명상",
                       style: TextStyle(
                           color: Colors.white, fontSize: Get.height * 0.036)),
                   SizedBox(height: Get.height * 0.006),
-                  Text("일상의 명상",
+                  Text(Get.arguments["group"] ?? "그룹없음",
                       style: TextStyle(
                           color: Colors.white.withOpacity(0.6),
                           fontSize: Get.height * 0.02)),

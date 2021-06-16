@@ -18,22 +18,22 @@ List<MeditationTile> meditationTiles = [
   }),
   MeditationTile.fromMap({
     "name": "지혜를 개발하는 명상",
-    "imageUrl": "https://www.bulkwang.co.kr/news/photo/201909/34235_8569_5127.jpg",
-    "length": 4,
-  }),
-  MeditationTile.fromMap({
-    "name": "자연소리와 함께하는 명상",
     "imageUrl": "https://t1.daumcdn.net/cfile/tistory/252D9B3F549283D10D",
     "length": 5,
   }),
   MeditationTile.fromMap({
+    "name": "자연소리와 함께하는 명상",
+    "imageUrl": "https://www.bulkwang.co.kr/news/photo/201909/34235_8569_5127.jpg",
+    "length": 7,
+  }),
+  MeditationTile.fromMap({
     "name": "치유와 자명의 명상",
     "imageUrl": "https://image.freepik.com/free-vector/monk-meditation_11700-320.jpg",
-    "length": 6,
+    "length": 2,
   }),
   MeditationTile.fromMap({
     "name": "고전과 함께하는 명상",
     "imageUrl": "https://img.sbs.co.kr/newimg/news/20200825/201464715_1280.jpg",
-    "length": 7,
+    "length": 12,
   }),
 ];

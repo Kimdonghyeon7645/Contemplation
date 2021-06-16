@@ -75,7 +75,7 @@ class MeditationGroupPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  for (int i = 0; i < meditationGroup.meditations.length; i++) MeditationGroupTile(meditationGroup.meditations[i]),
+                  for (int i = 0; i < meditationGroup.meditations.length; i++) MeditationGroupTile(meditationGroup.meditations[i], meditationGroup.title),
                 ],
               ),
             ),

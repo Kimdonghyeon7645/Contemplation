@@ -5,11 +5,14 @@ class HomeRecommendBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed("/meditation"),
+      onTap: () => Get.toNamed("/meditation", arguments: {
+        "name": "마음을 비우는 명상",
+        "group": "일상속 명상",
+      }),
       child: Container(
         margin: EdgeInsets.only(left: Get.width * 0.02),
         child: Container(
-          width: Get.width * 0.4,
+          width: Get.width * 0.41,
           padding: EdgeInsets.only(top: Get.height * 0.106),
           child: Column(
             children: [
