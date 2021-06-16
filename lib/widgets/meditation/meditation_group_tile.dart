@@ -4,17 +4,13 @@ import 'package:get/get.dart';
 
 class MeditationGroupTile extends StatelessWidget {
   final MeditationGroupTileData meditation;
-  final String groupName;
 
-  MeditationGroupTile(this.meditation, this.groupName);
+  MeditationGroupTile(this.meditation);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed("/meditation", arguments: {
-        "name": meditation.title,
-        "group": groupName,
-      }),
+      onTap: () => Get.toNamed("/meditation", arguments: meditation),
       child: Container(
         height: Get.height * 0.08,
         child: Row(
@@ -22,10 +18,14 @@ class MeditationGroupTile extends StatelessWidget {
             SizedBox(width: Get.width * 0.04),
             Icon(Icons.play_circle_outline, color: Colors.grey),
             SizedBox(width: Get.width * 0.03),
-            Text(meditation.title, style: TextStyle(fontSize: Get.height * 0.018)),
+            Text(meditation.title,
+                style: TextStyle(fontSize: Get.height * 0.018)),
             Spacer(),
             SizedBox(width: Get.width * 0.04),
-            Text((meditation.second / 60).floor().toString().padLeft(2, "0") + ":" + (meditation.second % 60).toString().padLeft(2, "0"),
+            Text(
+                (meditation.second / 60).floor().toString().padLeft(2, "0") +
+                    ":" +
+                    (meditation.second % 60).toString().padLeft(2, "0"),
                 style: TextStyle(
                     fontSize: Get.height * 0.014,
                     color: Colors.black.withOpacity(0.5))),

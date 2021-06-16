@@ -10,12 +10,14 @@ class MeditationGroupData {
 }
 
 class MeditationGroupTileData {
-  final String title;
+  final String title, groupName, imageUrl;
   final int second;
   final bool isCompleted;
 
   MeditationGroupTileData.fromMap(Map<String, dynamic> map)
       : title = map["title"],
+        groupName = map["groupName"],
+        imageUrl = map["imageUrl"],
         second = map["second"],
         isCompleted = map["isCompleted"];
 }

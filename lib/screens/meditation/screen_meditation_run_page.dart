@@ -1,4 +1,5 @@
 import 'package:contemplation/controllers/meditation_run_controller.dart';
+import 'package:contemplation/models/meditation_group.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,10 +8,11 @@ class MeditationRunPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(MeditationRunController());
+    MeditationGroupTileData meditation = Get.arguments;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(Get.arguments["group"] ?? "그룹없음", style: TextStyle(color: Colors.black)),
+        title: Text(meditation.groupName, style: TextStyle(color: Colors.black)),
         actions: [
           IconButton(
             icon: Icon(Icons.more_vert),
@@ -23,8 +25,7 @@ class MeditationRunPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("images/명상02.jpg"),
-                  // image: AssetImage("images/명상01.jpg"),
+                  image: meditation.imageUrl != null ? NetworkImage(meditation.imageUrl) : AssetImage("images/명상02.jpg"),
                   fit: BoxFit.cover),
             ),
             child: Container(
@@ -43,11 +44,11 @@ class MeditationRunPage extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: Get.height * 0.05),
-                  Text(Get.arguments["name"] ?? "제목없는 명상",
+                  Text(meditation.title ?? "제목없는 명상",
                       style: TextStyle(
                           color: Colors.white, fontSize: Get.height * 0.036)),
                   SizedBox(height: Get.height * 0.006),
-                  Text(Get.arguments["group"] ?? "그룹없음",
+                  Text(meditation.groupName ?? "그룹없음",
                       style: TextStyle(
                           color: Colors.white.withOpacity(0.6),
                           fontSize: Get.height * 0.02)),
