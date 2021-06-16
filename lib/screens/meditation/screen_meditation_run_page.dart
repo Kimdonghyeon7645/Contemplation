@@ -25,7 +25,7 @@ class MeditationRunPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: meditation.imageUrl != null ? NetworkImage(meditation.imageUrl) : AssetImage("images/명상02.jpg"),
+                  image: meditation.imageUrl.split("/").first != "images" ? NetworkImage(meditation.imageUrl) : AssetImage(meditation.imageUrl),
                   fit: BoxFit.cover),
             ),
             child: Container(
