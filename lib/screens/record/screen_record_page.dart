@@ -62,12 +62,12 @@ class RecordPage extends StatelessWidget {
           ),
           SizedBox(height: Get.height * 0.04),
           Divider(thickness: 1.6, color: Colors.grey.withOpacity(0.13)),
-          SizedBox(height: Get.height * 0.008),
+          SizedBox(height: Get.height * 0.01),
           Padding(
             padding: EdgeInsets.only(left: Get.width * 0.06),
             child: Text("날짜별 기록", style: TextStyle(fontSize: Get.height * 0.022, fontWeight: FontWeight.w800)),
           ),
-          SizedBox(height: Get.height * 0.02),
+          SizedBox(height: Get.height * 0.025),
           GetBuilder<RecordController>(
             builder: (ctr) => Row(
               children: [
