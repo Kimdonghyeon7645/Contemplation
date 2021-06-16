@@ -1,7 +1,6 @@
 import 'package:contemplation/controllers/record_controller.dart';
 import 'package:contemplation/widgets/bottom_bar.dart';
 import 'package:contemplation/widgets/record/calendar_box.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
