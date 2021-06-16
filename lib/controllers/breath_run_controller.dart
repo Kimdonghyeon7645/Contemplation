@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 class BreathRunController extends GetxController {
   final List<List<int>> secondList;
   int readySecond = 3;
+  int showTime = 0;
   int showSecond = 1;
   int secondIndex = 0;
   int breathCount = 0;
@@ -12,6 +13,7 @@ class BreathRunController extends GetxController {
 
   BreathRunController(List<List<int>> secondList)
       : this.secondList = secondList {
+    showTime = secondList.map((e) => e.first * e.last * 2).reduce((a, b) => a + b);
     timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
       if (readySecond > 0) {
         readySecond--;
@@ -28,6 +30,7 @@ class BreathRunController extends GetxController {
         } else {
           showSecond++;
         }
+        showTime--;
       }
       update();
     });

@@ -22,7 +22,7 @@ class BreathRunPage extends StatelessWidget {
         builder: (ctr) => Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("09:10",
+            Text("${ctr.showTime ~/ 60}:${ctr.showTime % 60}",
                 style: TextStyle(
                     color: Colors.black.withOpacity(0.6),
                     fontSize: Get.height * 0.026,
