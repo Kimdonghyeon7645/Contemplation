@@ -82,7 +82,7 @@ class MeditationGroupPage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(
-                onTap: () => Get.toNamed("/meditation", arguments: meditationGroup.meditations.first.title),
+                onTap: () => Get.toNamed("/meditation", arguments: meditationGroup.meditations.first),
                 child: Container(
                   width: Get.width * 0.9,
                   height: Get.height * 0.062,
