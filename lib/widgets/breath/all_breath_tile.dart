@@ -34,7 +34,7 @@ class AllBreathTile extends StatelessWidget {
             children: [
               Text(breath.name, style: TextStyle(fontSize: Get.height * 0.019)),
               SizedBox(height: Get.height * 0.002),
-              Text("${breath.breathSeconds[0][0]}-${breath.breathSeconds[breath.breathSeconds.length-1][0]}초", style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: Get.height * 0.018)),
+              Text("${breath.breathSeconds.first[0]}-${breath.breathSeconds.last[0]}초", style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: Get.height * 0.018)),
             ],
           ),
           Spacer(),
