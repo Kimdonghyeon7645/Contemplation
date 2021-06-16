@@ -1,7 +1,12 @@
+import 'package:contemplation/models/breath.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LastBreathTile extends StatelessWidget {
+  final Breath breath;
+
+  LastBreathTile(this.breath);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -9,8 +14,7 @@ class LastBreathTile extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("images/연꽃01.jpg"),
-              fit: BoxFit.cover),
+              image: AssetImage("images/연꽃01.jpg"), fit: BoxFit.cover),
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
         width: Get.width * 0.45,
@@ -25,17 +29,26 @@ class LastBreathTile extends StatelessWidget {
             children: [
               SizedBox(height: Get.height * 0.01),
               Text(
-                "5초대 단전 호흡",
-                style: TextStyle(color: Colors.white, fontSize: Get.height * 0.019, fontWeight: FontWeight.w400),
+                breath.name,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: Get.height * 0.019,
+                    fontWeight: FontWeight.w400),
               ),
               SizedBox(height: Get.height * 0.01),
               Text(
-                "8-12초",
-                style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: Get.height * 0.022, fontWeight: FontWeight.w300),
+                "${breath.breathSeconds.first[0]}-${breath.breathSeconds.last[0]}초",
+                style: TextStyle(
+                    color: Colors.white.withOpacity(0.7),
+                    fontSize: Get.height * 0.022,
+                    fontWeight: FontWeight.w300),
               ),
               Text(
-                "10분",
-                style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: Get.height * 0.022, fontWeight: FontWeight.w300),
+                "${breath.breathSeconds.map((e) => 2 * e[0] * e[1]).reduce((a, b) => a + b) ~/ 60}분",
+                style: TextStyle(
+                    color: Colors.white.withOpacity(0.7),
+                    fontSize: Get.height * 0.022,
+                    fontWeight: FontWeight.w300),
               ),
             ],
           ),

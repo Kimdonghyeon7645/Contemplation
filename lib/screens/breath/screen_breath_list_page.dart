@@ -1,3 +1,4 @@
+import 'package:contemplation/controllers/breath_list_controller.dart';
 import 'package:contemplation/dummies/breath_dummy.dart';
 import 'package:contemplation/models/breath.dart';
 import 'package:contemplation/widgets/bottom_bar.dart';
@@ -9,6 +10,7 @@ import 'package:get/get.dart';
 class BreathListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Get.put(BreathListController());
     return Scaffold(
       appBar: AppBar(
         title: Text("호흡", style: Get.theme.appBarTheme.titleTextStyle),
@@ -28,13 +30,15 @@ class BreathListPage extends StatelessWidget {
             SizedBox(height: Get.height * 0.01),
             SizedBox(
               height: Get.width * 0.32,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(width: Get.width * 0.03),
-                  for (int i in [1, 2, 3]) LastBreathTile(),
-                  SizedBox(width: Get.width * 0.02),
-                ],
+              child: GetBuilder<BreathListController>(
+                builder: (ctr) => ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    SizedBox(width: Get.width * 0.03),
+                    for (Breath breath in ctr.lastBreathList) LastBreathTile(breath),
+                    SizedBox(width: Get.width * 0.02),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: Get.height * 0.04),

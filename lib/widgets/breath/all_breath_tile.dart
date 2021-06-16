@@ -19,11 +19,8 @@ class AllBreathTile extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("images/연꽃02.jpg"),
-                    fit: BoxFit.cover
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(22))
-            ),
+                    image: AssetImage("images/연꽃02.jpg"), fit: BoxFit.cover),
+                borderRadius: BorderRadius.all(Radius.circular(22))),
             height: Get.height * 0.095,
             width: Get.height * 0.095,
           ),
@@ -34,11 +31,17 @@ class AllBreathTile extends StatelessWidget {
             children: [
               Text(breath.name, style: TextStyle(fontSize: Get.height * 0.019)),
               SizedBox(height: Get.height * 0.002),
-              Text("${breath.breathSeconds.first[0]}-${breath.breathSeconds.last[0]}초", style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: Get.height * 0.018)),
+              Text(
+                  "${breath.breathSeconds.first[0]}-${breath.breathSeconds.last[0]}초",
+                  style: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: Get.height * 0.018)),
             ],
           ),
           Spacer(),
-          Text("${breath.breathSeconds.map((e) => 2 * e[0] * e[1]).reduce((a, b) => a + b) ~/ 60}분", style: TextStyle(color: Colors.black.withOpacity(0.3))),
+          Text(
+              "${breath.breathSeconds.map((e) => 2 * e[0] * e[1]).reduce((a, b) => a + b) ~/ 60}분",
+              style: TextStyle(color: Colors.black.withOpacity(0.3))),
           SizedBox(width: Get.width * 0.05),
         ],
       ),
