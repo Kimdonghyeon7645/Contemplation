@@ -1,3 +1,5 @@
+import 'package:contemplation/dummies/breath_dummy.dart';
+import 'package:contemplation/models/breath.dart';
 import 'package:contemplation/widgets/bottom_bar.dart';
 import 'package:contemplation/widgets/breath/all_breath_tile.dart';
 import 'package:contemplation/widgets/breath/last_breath_tile.dart';
@@ -46,7 +48,7 @@ class BreathListPage extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  for (int i = 0; i < 10; i++) AllBreathTile(),
+                  for (Breath breath in breathList) AllBreathTile(breath),
                 ],
               ),
             ),

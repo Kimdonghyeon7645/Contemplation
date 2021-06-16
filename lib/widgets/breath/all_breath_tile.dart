@@ -1,7 +1,12 @@
+import 'package:contemplation/models/breath.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AllBreathTile extends StatelessWidget {
+  final Breath breath;
+
+  AllBreathTile(this.breath);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,12 +27,18 @@ class AllBreathTile extends StatelessWidget {
             height: Get.height * 0.095,
             width: Get.height * 0.095,
           ),
-          SizedBox(width: Get.width * 0.025),
-          Text("기본 호흡", style: TextStyle(fontSize: Get.height * 0.02)),
-          SizedBox(width: Get.width * 0.04),
-          Text("3-6초", style: TextStyle(color: Colors.black.withOpacity(0.5))),
+          SizedBox(width: Get.width * 0.026),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(breath.name, style: TextStyle(fontSize: Get.height * 0.019)),
+              SizedBox(height: Get.height * 0.002),
+              Text("${breath.breathSeconds[0][0]}-${breath.breathSeconds[breath.breathSeconds.length-1][0]}초", style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: Get.height * 0.018)),
+            ],
+          ),
           Spacer(),
-          Text("20분", style: TextStyle(color: Colors.black.withOpacity(0.3))),
+          Text("${breath.breathSeconds.map((e) => 2 * e[0] * e[1]).reduce((a, b) => a + b) ~/ 60}분", style: TextStyle(color: Colors.black.withOpacity(0.3))),
           SizedBox(width: Get.width * 0.05),
         ],
       ),
