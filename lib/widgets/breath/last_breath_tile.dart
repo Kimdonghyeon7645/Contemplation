@@ -1,3 +1,4 @@
+import 'package:contemplation/controllers/breath_list_controller.dart';
 import 'package:contemplation/models/breath.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,7 +11,10 @@ class LastBreathTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed("/breath"),
+      onTap: () {
+        Get.toNamed("/breath", arguments: breath);
+        Get.find<BreathListController>().addBreath(breath);
+      },
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

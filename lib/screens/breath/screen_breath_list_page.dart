@@ -35,7 +35,7 @@ class BreathListPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     SizedBox(width: Get.width * 0.03),
-                    for (Breath breath in ctr.lastBreathList) LastBreathTile(breath),
+                    for (Breath breath in ctr.lastBreathList.reversed) LastBreathTile(breath),
                     SizedBox(width: Get.width * 0.02),
                   ],
                 ),

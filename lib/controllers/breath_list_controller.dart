@@ -15,6 +15,9 @@ class BreathListController extends GetxController {
   }
 
   void addBreath(Breath breath) {
+    if (lastBreathList.contains(breath)) {
+      lastBreathList.remove(breath);
+    }
     lastBreathList.add(breath);
     update();
   }
