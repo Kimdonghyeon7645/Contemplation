@@ -36,7 +36,7 @@ class MeditationContentTile extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(15)),
             image: DecorationImage(
-              image: NetworkImage(tile.imageUrl),
+              image: tile.imageUrl.split("/").first != "images" ? NetworkImage(tile.imageUrl) : AssetImage(tile.imageUrl),
               fit: BoxFit.cover,
             )),
         alignment: Alignment.bottomCenter,

@@ -1,6 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
+import 'package:contemplation/controllers/meditation_run_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +6,7 @@ class MeditationRunPage extends StatelessWidget {
   final Color btnColor = Colors.black;
   @override
   Widget build(BuildContext context) {
+    Get.put(MeditationRunController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -86,7 +85,7 @@ class MeditationRunPage extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(
-                            left: Get.width * (0.89 - (0.89 * 0.4))),
+                            left: Get.width * (0.89 - (0.89 * 0.0))),
                         height: Get.height * 0.018,
                         width: Get.height * 0.018,
                         decoration: BoxDecoration(
@@ -99,7 +98,7 @@ class MeditationRunPage extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(width: Get.width * 0.01),
-                      Text("06:01",
+                      Text("00:00",
                           style: TextStyle(
                               fontSize: Get.height * 0.015,
                               color: Colors.grey)),

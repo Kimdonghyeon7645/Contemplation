@@ -31,6 +31,7 @@ dependencies:
   get:
   material_design_icons_flutter: 4.0.5955
   date_util: ^0.1.4
+  assets_audio_player: ^3.0.3+1
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
+    - assets/audio/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
