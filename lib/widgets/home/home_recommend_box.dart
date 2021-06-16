@@ -1,14 +1,16 @@
+import 'package:contemplation/models/meditation_group.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeRecommendBox extends StatelessWidget {
+  final MeditationGroupTileData meditation;
+
+  HomeRecommendBox(this.meditation);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed("/meditation", arguments: {
-        "name": "마음을 비우는 명상",
-        "group": "일상속 명상",
-      }),
+      onTap: () => Get.toNamed("/meditation", arguments: meditation),
       child: Container(
         margin: EdgeInsets.only(left: Get.width * 0.02),
         child: Container(
@@ -16,11 +18,10 @@ class HomeRecommendBox extends StatelessWidget {
           padding: EdgeInsets.only(top: Get.height * 0.106),
           child: Column(
             children: [
-              Text("마음을 비우는 명상",
+              Text(meditation.title,
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: Get.height * 0.018)),
-              Text("10분",
+                      color: Colors.white, fontSize: Get.height * 0.018)),
+              Text("${meditation.second ~/ 60}분",
                   style: TextStyle(
                       color: Colors.white.withOpacity(0.7),
                       fontSize: Get.height * 0.016)),
@@ -31,19 +32,17 @@ class HomeRecommendBox extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0),
-                    Colors.black.withOpacity(0.5),
-                  ]
-              )
-          ),
+                Colors.black.withOpacity(0),
+                Colors.black.withOpacity(0.5),
+              ])),
         ),
         decoration: BoxDecoration(
             image: DecorationImage(
-              // image: AssetImage("images/홍익01.jpg"),
-                image: AssetImage("images/명상01.jpg"),
+                image: meditation.imageUrl.split("/").first == "images"
+                    ? AssetImage(meditation.imageUrl)
+                    : NetworkImage(meditation.imageUrl),
                 fit: BoxFit.cover),
-            borderRadius:
-            BorderRadius.all(Radius.circular(15))),
+            borderRadius: BorderRadius.all(Radius.circular(15))),
       ),
     );
   }

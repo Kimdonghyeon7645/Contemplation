@@ -77,7 +77,7 @@ class MeditationRunPage extends StatelessWidget {
                         padding: EdgeInsets.only(
                             left: Get.width * 0.01, right: Get.width * 0.01),
                         child: LinearProgressIndicator(
-                          value: 0.6,
+                          value: 0,
                           valueColor:
                               AlwaysStoppedAnimation<Color>(Colors.indigo),
                           backgroundColor: Colors.grey.withOpacity(0.2),
@@ -86,7 +86,7 @@ class MeditationRunPage extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(
-                            left: Get.width * (0.89 - (0.89 * 0.0))),
+                            left: Get.width * (0.89 - (0.89 * 1))),
                         height: Get.height * 0.018,
                         width: Get.height * 0.018,
                         decoration: BoxDecoration(

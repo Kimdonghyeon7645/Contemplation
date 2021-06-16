@@ -2,7 +2,7 @@ import 'package:contemplation/models/meditation_group.dart';
 
 MeditationGroupData meditationGroup = MeditationGroupData.fromMap({
   "title": "자연소리와 함께하는 명상",
-  "imageUrl": "images/명상04.jpg",
+  "imageUrl": "images/명상06.jpg",
   "description":
       "자연은 한자로 스스로 그러하다라는 뜻을 의미합니다. 무위하게 존재하는 자연의 소리를 따라 명상하는 스스로도 무위의 시간을 가져봅시다.",
   "meditations": [
