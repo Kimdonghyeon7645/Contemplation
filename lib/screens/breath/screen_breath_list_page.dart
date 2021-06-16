@@ -1,4 +1,5 @@
 import 'package:contemplation/widgets/bottom_bar.dart';
+import 'package:contemplation/widgets/breath/all_breath_tile.dart';
 import 'package:contemplation/widgets/breath/last_breath_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -45,38 +46,7 @@ class BreathListPage extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  for (int i = 0; i < 10; i++)
-                    Container(
-                      margin: EdgeInsets.only(top: Get.height * 0.008),
-                      height: Get.height * 0.115,
-                      width: Get.width * 0.92,
-                      child: Row(
-                        children: [
-                          SizedBox(width: Get.width * 0.02),
-                          Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/연꽃02.jpg"),
-                                fit: BoxFit.cover
-                              ),
-                              borderRadius: BorderRadius.all(Radius.circular(22))
-                            ),
-                            height: Get.height * 0.095,
-                            width: Get.height * 0.095,
-                          ),
-                          SizedBox(width: Get.width * 0.025),
-                          Text("기본 호흡", style: TextStyle(fontSize: Get.height * 0.02)),
-                          SizedBox(width: Get.width * 0.04),
-                          Text("3-6초", style: TextStyle(color: Colors.black.withOpacity(0.5))),
-                          Spacer(),
-                          Text("20분", style: TextStyle(color: Colors.black.withOpacity(0.3))),
-                          SizedBox(width: Get.width * 0.05),
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          color: Colors.amber.withOpacity(0.12),
-                          borderRadius: BorderRadius.all(Radius.circular(12))),
-                    ),
+                  for (int i = 0; i < 10; i++) AllBreathTile(),
                 ],
               ),
             ),
